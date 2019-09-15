@@ -11,6 +11,8 @@ public class main {
                 "spiderman",
                 Duration.ofMinutes(120L),
                 Money.of(5000.0),
+                new SequenceAmountDiscount(Money.of(1000.0), 1),
+                new SequenceAmountDiscount(Money.of(1000.0), 1),
                 new SequenceAmountDiscount(Money.of(1000.0), 1)
         );
 
@@ -31,7 +33,9 @@ public class main {
         theater.contractTicketOffice(ticketOffice, 10.0);
         TicketSeller seller = new TicketSeller();
         seller.setTicketOffice(ticketOffice);
+
         Customer customer = new Customer(Money.of(20000.0));
+//        10번 줄의 스파이더맨 영화를 보고 싶은 사람일 경우.
         for (Screening screening : theater.getScreening(movie)) {
             customer.reserve(seller, theater, movie, screening, 2);
             boolean isOk = theater.enter(customer, 2);

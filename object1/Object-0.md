@@ -188,3 +188,20 @@ TDD 를 짜는 것과 비슷하게 클라이언트와 비슷하게 짜보는게 
 
 
 
+![image-20190823114504882](http://ww4.sinaimg.cn/large/006y8mN6gy1g69f1hu9blj30fz0efwgr.jpg)
+
+
+
+![image-20190823114542666](http://ww4.sinaimg.cn/large/006y8mN6gy1g69f251sw1j30db0cswgo.jpg)
+
+
+
+![image-20190823114557733](http://ww3.sinaimg.cn/large/006y8mN6gy1g69f2eek1ej30hv0c1di0.jpg)
+
+
+
+![image-20190823114608498](http://ww4.sinaimg.cn/large/006y8mN6gy1g69f2lk3vaj30cu0dd0vg.jpg)
+
+
+
+![image-20190823114619821](http://ww3.sinaimg.cn/large/006y8mN6gy1g69f2sgtv0j30ct0cutaj.jpg)
