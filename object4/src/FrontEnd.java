@@ -1,18 +1,25 @@
-public class FrontEnd implements Programmer {
+public abstract class FrontEnd<T extends Paper> extends Programmer<T> {
     private Language language;
     private Library library;
 
     @Override
-    public Program makeProgram(Paper paper) {
-        if (paper instanceof Client) {
-            Client pb = (Client) paper;
-            language = pb.language;
-            library = pb.library;
-        }
-        return makeFrontEndProgram();
+    protected Program makeProgram(){
+        return new Program();
     }
 
-    private Program makeFrontEndProgram() {
-        return new Program();
+    public Language getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(Language language) {
+        this.language = language;
+    }
+
+    public Library getLibrary() {
+        return library;
+    }
+
+    public void setLibrary(Library library) {
+        this.library = library;
     }
 }

@@ -1,18 +1,25 @@
-public class BackEnd implements Programmer {
+public abstract class BackEnd<T extends Paper> extends Programmer<T> {
     private Server server;
     private Language language;
 
     @Override
-    public Program makeProgram(Paper paper) {
-        if (paper instanceof ServerClient) {
-            ServerClient pa = (ServerClient) paper;
-            this.server = pa.server;
-            this.language = pa.backEndLanguage;
-        }
-        return makeBackEndProgram();
+    protected Program makeProgram(){
+        return new Program();
     }
 
-    private Program makeBackEndProgram() {
-        return new Program();
+    public Server getServer() {
+        return server;
+    }
+
+    public void setServer(Server server) {
+        this.server = server;
+    }
+
+    public Language getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(Language language) {
+        this.language = language;
     }
 }
