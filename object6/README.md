@@ -1,16 +1,12 @@
 # 합성과 의존성
 
-
-
 의존성 없이는 객체망이 생겨나지 않을 것.
 
 적절하게 관리한다?
 
-적절하게 관리하는 건 없다-
+`적절하게 관리한다` 라는 말 따위는 없다-
 
-
-
-양방향의 고리를 끊는 것
+양방향의 고리를 끊는 것은 중요하다.
 
 ## 템플릿 메소드 패턴
 
@@ -19,32 +15,41 @@ DiscountPolicy class에서
 ```java
 abstract class DiscountPolicy {
   private Set<DiscountCondition> conditions = new HashSet<>();
-  public void addCondition(DiscountCondition condition){conditions.add(condition);} public Money calculateFee(Screening screening, int count, Money fee){
-    for(DiscountCondition condition:conditions){ if(condition.isSatisfiedBy(screening, count)) return calculateFee(fee);
-                                               }
-    return fee; }
-  protected abstract Money calculateFee(Money fee); }
+  public void addCondition(DiscountCondition condition {
+    conditions.add(condition);
+  }                          
+  public Money calculateFee(Screening screening, int count, Money fee){
+    	for(DiscountCondition condition:conditions){
+        if(condition.isSatisfiedBy(screening, count)) 
+          return calculateFee(fee);
+	}
+    return fee; 
+  }
+  protected abstract Money calculateFee(Money fee); 
+}
 ```
 
 
 
-객체지향에서 부모가 자식을 아는 것이 다운캐스팅인데, 이는 잘 못된 것이다.
+객체지향에서 부모가 자식을 아는 것이 다운캐스팅인데, `이는 다운캐스팅은 좋지 못한 것이다.`
 
-우리는 늘 업캐스팅만이 되어야 한다. 자식이 부모를 가르키게 된다. 이게 근본적으로 잘 못 된 것.
+우리는 리스코프 치환원칙을 지키기 위해서는늘 `업캐스팅` 만 존재해야 한다. 
 
 
 
-부모를 건들이면 영향을 받는 곳이 여러 곳이다. 의존성이 엄청 퍼진다.
+자식이 부모를 가르키고, 건들이게되고 의존하게된다. 이게 근본적으로 잘 못 된 것이다.
 
-겁나서 고칠 수 없다.
+만약, 부모를 건들이면 영향을 받는 곳이 여러 곳이다. 의존성이 엄청 퍼진다. 겁나서 우리는 코드를 고칠 수 없다.
 
-위 코드에서 보면 부모가 자식을 알고 있는데, 어떻게? 
+
+
+위 코드에서 보면 부모가 자식을 알고 있는데, 어떻게 리스코프치환원칙을 지킬 수 있었을까? 
 
 `return calculateFee(fee);` 이 코드가 그 증거이다.
 
 
 
-부모의 의존성 방향이 반대가 된다. 부모가 자식이 미래에 구현하게될 부분을 fix하게 된다.
+부모의 의존성 방향이 반대가 된다. 부모가 자식이 미래에 구현하게될 부분(calculateFee)을 fix하게 된다.
 
 이것이 바로 템플릿 메소드의 장점이다.
 
@@ -54,11 +59,9 @@ abstract class DiscountPolicy {
 
 
 
-훅을 사용하는 것이 템플릿 메소드 패턴
+`Hook`을 사용하는 것이 바로 템플릿 메소드 패턴
 
-
-
-AmountPocliy 를 보면 확정된 프로토콜을 통해 결정.
+`AmountPocliy` 를 보면 확정된 프로토콜을 통해 결정.
 
 ![image-20191012135141342](https://tva1.sinaimg.cn/large/006y8mN6gy1g7vbon8uhjj319y0iqtbl.jpg)
 
@@ -72,50 +75,54 @@ AmountPocliy 를 보면 확정된 프로토콜을 통해 결정.
 
 
 
- 의존성의 무게는 의존하는(아는얘가) 많을 수록 고치기 힘들어진다는 것이 상속이라면 그 반대로 의존을 역전시켜 해결한다.
+ ***의존성의 무게는 의존하는(아는얘가) 많을 수록 고치기 힘들어진다는 것이 상속이라면, 그 반대로 의존을 역전시켜 해결한다.***
 
 
 
-91011장 모두 상속에 대한 요구.
+9,10,11장 모두 상속에 대한 이야기.
 
 
 
-## 똑같은 코드를 전략패턴으로 바꾸면?
+## 위 똑같은 코드를 전략패턴으로 바꾸면?
 
 어느정도 안정화된다면 전략 패턴으로 
 
 ```java
 public class DiscountPolicy {
-private final Set<DiscountCondition> conditions = new HashSet<>();
-private final Calculator calculator;
-public DiscountPolicy(Calculator calculator){this.calculator = calculator;} public void addCondition(DiscountCondition condition){conditions.add(condition);} public Money calculateFee(Screening screening, int count, Money fee){
-for(DiscountCondition condition:conditions){ if(condition.isSatisfiedBy(screening, count)) return
-}
-return fee; }
+	private final Set<DiscountCondition> conditions = new HashSet<>();
+💡private final Calculator calculator;💡
+	public DiscountPolicy(Calculator calculator){
+    this.calculator = calculator;
+  } 
+  public void addCondition(DiscountCondition condition { 
+    conditions.add(condition);
+  } 
+  public Money calculateFee(Screening screening, int count, Money fee){
+    for(DiscountCondition condition:conditions){
+      if(condition.isSatisfiedBy(screening, count)) 
+        return
+    }
+    return fee; 
+  }
 }
 ```
 
 
 
-전략패턴은 합성을 사용한다. 더 이상 상속을 받지 않는 단일 클래스로 변경 된다.
+전략패턴은 합성을 사용한다.   
+더 이상 상속을 받지 않는 단일 클래스로 변경 된다.
 
 
 
-상속을 사용하지 않고 주입을 사용
+상속을 사용하지 않고 주입을 사용한다.
 
 ![image-20191012140118726](https://tva1.sinaimg.cn/large/006y8mN6gy1g7vbyue5b6j319q0i4wiz.jpg)
 
 
 
-전략패턴은 부모처럼 쓰지말고 인터페이스처럼 쓰라는 말이다.
-
-
+전략패턴은 부모처럼 쓰지말고 `인터페이스처럼` 쓰라는 말이다.
 
 ![image-20191012140938965](https://tva1.sinaimg.cn/large/006y8mN6gy1g7vc7cbhljj319s0i2ad9.jpg)
-
-
-
-
 
 부모를 짤 때 전략이나 템플릿 메서드 패턴으로 변경해보면 안다. 잘 바꿀 수 있다면 잘 만든 것이다.
 
@@ -125,17 +132,15 @@ return fee; }
 
 ![image-20191012141145487](https://tva1.sinaimg.cn/large/006y8mN6gy1g7vc9jb220j31aa0ikq6n.jpg)
 
-
-
-의존성 관계를 해결하는데, 전략 패턴의 경우 Calculator가 완충역할을 하는 반면에서 템플릿메서드 패턴의 경우에는 의존성 뱡향을 변경한다.
-
-
-
-중간에 Calculator 가 있기 때문에, 변화가 많이 일어날 경우 도움이 될 수 있다. 그러나 Calculator는 무거워 질 수 있다. 
+ 의존성 관계를 해결하는데, 전략 패턴의 경우 Calculator가 완충역할을 하는 반면에서 템플릿메서드 패턴의 경우에는 의존성 뱡향을 변경한다.
 
 
 
-이제 이 두 개를 비교해보자.
+중간에 Calculator 가 있기 때문에, 변화가 많이 일어날 경우 도움이 될 수 있다. 그러나 Calculatoreh 무거워 질 수 있다. 
+
+
+
+# 이제 이 두 개를 비교해보자.
 
 ![image-20191012141713494](https://tva1.sinaimg.cn/large/006y8mN6gy1g7vcfbqvp7j317c0icacv.jpg)
 
@@ -143,13 +148,9 @@ return fee; }
 
 
 
-그러나 여기에도 문제가 존재하게 되는데,
+그러나 여기에도 문제가 존재하게 되는데, 조합폭발이 일어나는 만큼, 그만큼 class를 만들어야 한다. 감당이 안될 수 있다.구제불능!   
 
-
-
-조합폭발이 일어나는 만큼, 그만큼 class를 만들어야 한다. 감당이 안될 수 있다. 
-
-그러나 전략패턴은 의존성 폭발이 일어날 수 있다. 
+*그러나 전략패턴은 의존성 폭발이 일어날 수 있다.* 
 
 ![image-20191012142229286](https://tva1.sinaimg.cn/large/006y8mN6gy1g7vckoxthfj319y0jc0wz.jpg)
 
@@ -157,23 +158,15 @@ return fee; }
 
 템플릿 패턴에서 발생하는 조합폭발은 구제불가 하지만 전략 패턴에서의 의존성 폭발은 해결 가능하다.
 
-
-
 ***세상에서 가장 좋은 템플릿 메소드의 훅은 하나만 존재하는 것이 가장 좋은 것이다.***
 
-
-
 전략패턴은 Hook 대신, 두 개의 전략 객체를 가진다. 
-
-
 
 ---
 
 # 생성사용패턴과 팩토리
 
-
-
-만들어내는 위한 코드와 사용하는 코드를 병행해서 쓰지 말라. 그러면 관리하기 힘든다.
+`만들어내는 위한 코드`와 `사용하는 코드`를 병행해서 쓰지 말라. **그러면 관리하기 힘든다.**
 
 생명주기도 틀려진다.
 
@@ -193,43 +186,41 @@ return fee; }
 
 
 
+클라이언트 생성코드를 사용코드에 주입시킨다.
+
 ![image-20191012143051034](https://tva1.sinaimg.cn/large/006y8mN6gy1g7vcteopwuj30x80ikabm.jpg)
 
+ `얼마나- 클라이언트에서 생성쪽 코드를 밀어냈냐?`에 따라 코드의 실력이 나눠진다. 
 
+### 직접 해보면 어렵다.
 
-얼마나 클라이언트에 생성쪽 코드로 밀어냈냐에 따라 코드의 실력이 나눠진다. 직접 해보면 어렵다.
+ 생성 사용패턴은 떡진 알고리즘의 일부를 형으로 바꿔서 생성해서 이용하는 코드로 분리하는 것부터 시작한다.
 
-생성사용패턴은 떡진 알고리즘의 일부를 형으로 바꿔서 생성해서 이용하는 코드로 분리.
-
-
-
-어떤 역할을 역할을 생성하는 코드와 이용하는 코드로 나눠서 이용하는 코드를 클라이언트로 밀어 낸다.
+어떤 코드를 `역할을 생성하는 코드`와 `이용하는 코드`로 나눠서 `이용하는 코드`를 클라이언트로 밀어 낸다.
 
 
 
-그럼 Inject을 조금 더 생각해보자.
+### 그럼 `Inject`을 조금 더 생각해보자.
 
 ![image-20191012143537060](https://tva1.sinaimg.cn/large/006y8mN6gy1g7vcycok3tj319w0i2n17.jpg)
 
 
 
-Injection은 좋은 걸까?
+**Injection은 과연 좋은 걸까?**
 
-한 가지 예로 ''시도때도 없이 쑤셔넣으면 좋은걸까?' 주입당하는 행위를 당하고 있기 때문에 좋다고 말할 수 없다.
-
-
+*한 가지 예로 ''시도때도 없이 쑤셔넣으면 좋은걸까?' 주입당하는 행위를 당하고 있기 때문에 좋다고 말할 수 없다.*
 
 ![image-20191012143648203](https://tva1.sinaimg.cn/large/006y8mN6gy1g7vczl0zi3j31a60istde.jpg)
 
-
-
 pushed가 아닌 pull을 하고 싶다.
+
+내가 필요할 때 가져와서 사용하고 싶다면?
 
 이런 제어권을 바꾸기 위해서 Factory를 만들 수 있다.
 
 ![image-20191012143811594](https://tva1.sinaimg.cn/large/006y8mN6gy1g7vd11d8mtj31a80ikdjv.jpg)
 
-위와 같이 만들 수 있는데, Factory 클래스는 전체를 준 게 아니라, 일부 '마이크' 와 같이 일부분을 준 것과 같다.
+위와 같이 만들 수 있는데, Factory 클래스는 전체를 준 게 아니라,  `마이크` 와 같이 일부분을 준 것과 같다.
 
 
 
