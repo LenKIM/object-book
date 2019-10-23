@@ -8,7 +8,7 @@
 
 
 
-`Assamble`은 레고같은거라면,
+`Assamble`은 레고 같은거라면,
 
 `Composition`은 자동차의 트랜스미션와 같다.
 
