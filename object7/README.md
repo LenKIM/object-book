@@ -2,7 +2,7 @@
 
 
 
-Point of Point 를 언어에서 어떤 키워드로 결정.
+Point of Point 를 언어에서 어떤 키워드로 결정하는가?
 
 **implement, extend**
 
@@ -14,11 +14,15 @@ Point of Point 를 언어에서 어떤 키워드로 결정.
 
 
 
+
+
 어떻게 동작할지 구체적으로 생각해보는 시간이 많지 않았다.
 
 
 
 책 후반부에는 어떤 관계, 설계, 왜 그렇게 해야되는지에 대한 이야기를 다르다. (11장~)
+
+
 
 객체지향적으로 생각하는 법을 배워야 한다.
 
@@ -36,19 +40,15 @@ Point of Point 를 언어에서 어떤 키워드로 결정.
 
 
 
-
-
 ![image-20191012204125792](https://tva1.sinaimg.cn/large/006y8mN6gy1g7vnj04nkxj30zk0ik76n.jpg)
 
 
 
 이번에는 확장(extend)
 
+자바에서 말하는 extend는 확장이라는 뜻과 일맥상통 한다.
+
 ![image-20191012204401072](https://tva1.sinaimg.cn/large/006y8mN6gy1g7vnlow5qxj31660iedi3.jpg)
-
-
-
-대수정공사
 
 
 
@@ -80,13 +80,15 @@ super의 동작원리
 
 
 
-왜 override가 나쁜가? 같은 용도의 category를 만들 수 있는가?
+왜 override가 나쁜가? 같은 용도의 category를 만들 수 있지 않는가?
+
+***extend에서 override하지말라,*** 라고 책은 말하고 있다.
 
 
 
-extend에서 override하지말라, 라고 책은 말하고 있다.
+그렇다면 좋은 확장이란 무엇인가?
 
-
+= 나쁜 확장의 반대다.
 
 ![image-20191012205711431](https://tva1.sinaimg.cn/large/006y8mN6gy1g7vnzetayoj30so0m2mxu.jpg)
 
@@ -102,7 +104,7 @@ extend에서 override하지말라, 라고 책은 말하고 있다.
 
 ![image-20191012205954532](https://tva1.sinaimg.cn/large/006y8mN6gy1g7vo289uq0j30uu0iewg3.jpg)
 
-
+**abstract protected**
 
 ![image-20191012210131484](https://tva1.sinaimg.cn/large/006y8mN6gy1g7vo3wpwp3j31120j4dj3.jpg)
 
@@ -140,13 +142,11 @@ extend에서 override하지말라, 라고 책은 말하고 있다.
 
 ***for loop를 재귀로 짤 수 있어야하고, 재귀를 for loop로 짤 수 있어야 한다.***
 
-
+마음 먹는대로 변경할 수 있어야 한다.
 
 상속모델을 합성모델로, 합성모델을 상속모델로 교체할 수있는 역량을 가져야 한다.
 
-
-
-`미래에 이 클래스가 미래에 확장될 수 있는가? ` 를 계속해서 확인해라.
+코딩을 하면서`미래에 이 클래스가 미래에 확장될 수 있는가? ` 를 계속해서 확인해라.
 
 
 
@@ -162,7 +162,7 @@ extend에서 override하지말라, 라고 책은 말하고 있다.
 
 
 
-좋은 부모의 클래스를 상속을 받는다면, implement나 extend 했을 경우 코드의 변화가 거의 없다.
+좋은 부모의 클래스를 상속을 받는다면, `implement`나 `extend` 했을 경우 코드의 변화가 거의 없다.
 
 
 
