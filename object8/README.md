@@ -8,29 +8,27 @@
 
 *계약은 메세지를 통해 주고 받는다.*
 
-![image-20191117210946818](/Users/lenkim/Library/Application Support/typora-user-images/image-20191117210946818.png)
+![image-20191117210946818](https://tva1.sinaimg.cn/large/006y8mN6gy1g91dnku9qrj31260ikgod.jpg)
 
-처음 규격을 맞쳐서 보내야 한다. - 전달받은 메세지의 규격 (precondition)
+## 처음 규격을 맞쳐서 보내야 한다. - 전달받은 메세지의 규격 (precondition)
 
 **sender가 아닌 receiver가 데이터를 검증한다.**
 
 
 
-전달할 메세지의 규격 - postcondtion
+## 전달할 메세지의 규격 - postcondtion
 
 **receiver 안에서 돌려주기 전에 데이터를 검증한다,**
 
 
 
-객제 자신의 규격 - class invariant (불변성) 
+## 객제 자신의 규격 - class invariant (불변성) 
 
 **상태에 의한 검증**
 
 **예를 들면, 네트워크를 하는 브릿지라면, 내 안에 정보가 아닌 프록시해서 가져오는 클래스라면 두 상태가 사전에 연결되 있어야 한다.** 
 
-
-
-위임된 책임의 컨텍스트
+## 위임된 책임의 컨텍스트
 
 **나혼자 이상한 짓인가? 앞 뒤의 장단을 잘 맞쳐주고 있는가?**
 
@@ -52,7 +50,7 @@ Invariant - 불변성
 
 
 
-![image-20191117211700388](/Users/lenkim/Library/Application Support/typora-user-images/image-20191117211700388.png)
+![image-20191117211700388](https://tva1.sinaimg.cn/large/006y8mN6gy1g91dnq6qtcj312q0i4mza.jpg)
 
 
 
@@ -252,7 +250,7 @@ SafetyInteger 라고 불린다.
 
 
 
-![image-20191117215703469](/Users/lenkim/Library/Application Support/typora-user-images/image-20191117215703469.png)
+![image-20191117215703469](https://tva1.sinaimg.cn/large/006y8mN6gy1g91dobe94yj312c0jatd5.jpg)
 
 
 

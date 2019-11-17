@@ -100,7 +100,7 @@ public class DiscountPolicy {
   public Money calculateFee(Screening screening, int count, Money fee){
     for(DiscountCondition condition:conditions){
       if(condition.isSatisfiedBy(screening, count)) 
-        return
+        return;
     }
     return fee; 
   }

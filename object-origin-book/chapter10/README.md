@@ -23,11 +23,11 @@
 한 달에 한 번씩 가입자별로 전화 요금을 계산하는 간단한 애플리케이션을 개발하자.
 
 ```java
-public class Call {
+public class 합성.Call {
     private LocalDateTime from;
     private LocalDateTime to;
 
-    public Call(LocalDateTime from, LocalDateTime to) {
+    public 합성.Call(LocalDateTime from, LocalDateTime to) {
         this.from = from;
         this.to = to;
     }
@@ -46,24 +46,24 @@ public class Call {
 
 ```java
 public class Phone {
-    private Money amount;
+    private Template_VS_Strategy.합성.Money amount;
     private Duration seconds;
-    private List<Call> calls = new ArrayList<>();
+    private List<합성.Call> calls = new ArrayList<>();
 
-    public Phone(Money amount, Duration seconds) {
+    public Phone(Template_VS_Strategy.합성.Money amount, Duration seconds) {
         this.amount = amount;
         this.seconds = seconds;
     }
 
-    public void call(Call call) {
+    public void call(합성.Call call) {
         calls.add(call);
     }
 
-    public List<Call> getCalls() {
+    public List<합성.Call> getCalls() {
         return calls;
     }
 
-    public Money getAmount() {
+    public Template_VS_Strategy.합성.Money getAmount() {
         return amount;
     }
 
@@ -71,10 +71,10 @@ public class Phone {
         return seconds;
     }
 
-    public Money calculateFee() {
-        Money result = Money.ZERO;
+    public Template_VS_Strategy.합성.Money calculateFee() {
+        Template_VS_Strategy.합성.Money result = Template_VS_Strategy.합성.Money.ZERO;
 
-        for(Call call : calls) {
+        for(합성.Call call : calls) {
             result = result.plus(amount.times(call.getDuration().getSeconds() / seconds.getSeconds()));
         }
 
@@ -101,21 +101,21 @@ amount > 5 // secons > 10 된다.
 public class NightlyDiscountPhone {
     private static final int LATE_NIGHT_HOUR = 22;
 
-    private Money nightlyAmount;
-    private Money regularAmount;
+    private Template_VS_Strategy.합성.Money nightlyAmount;
+    private Template_VS_Strategy.합성.Money regularAmount;
     private Duration seconds;
-    private List<Call> calls = new ArrayList<>();
+    private List<합성.Call> calls = new ArrayList<>();
 
-    public NightlyDiscountPhone(Money nightlyAmount, Money regularAmount, Duration seconds) {
+    public NightlyDiscountPhone(Template_VS_Strategy.합성.Money nightlyAmount, Template_VS_Strategy.합성.Money regularAmount, Duration seconds) {
         this.nightlyAmount = nightlyAmount;
         this.regularAmount = regularAmount;
         this.seconds = seconds;
     }
 
-    public Money calculateFee() {
-        Money result = Money.ZERO;
+    public Template_VS_Strategy.합성.Money calculateFee() {
+        Template_VS_Strategy.합성.Money result = Template_VS_Strategy.합성.Money.ZERO;
 
-        for(Call call : calls) {
+        for(합성.Call call : calls) {
             if (call.getFrom().getHour() >= LATE_NIGHT_HOUR) {
                 result = result.plus(nightlyAmount.times(call.getDuration().getSeconds() / seconds.getSeconds()));
             } else {
@@ -147,13 +147,13 @@ public class NightlyDiscountPhone {
 		...
     private double taxRate;
 
-    public NightlyDiscountPhone(Money nightlyAmount, Money regularAmount, Duration seconds, double taxRate) {
+    public NightlyDiscountPhone(Template_VS_Strategy.합성.Money nightlyAmount, Template_VS_Strategy.합성.Money regularAmount, Duration seconds, double taxRate) {
 	    ...
       this.taxRate = taxRate;
     }
 
-    public Money calculateFee() {
-        Money result = Money.ZERO;
+    public Template_VS_Strategy.합성.Money calculateFee() {
+        Template_VS_Strategy.합성.Money result = Template_VS_Strategy.합성.Money.ZERO;
 	     ...
         return result.minus(result.times(taxRate));
     }
@@ -165,17 +165,17 @@ public class Phone {
 		...
     private double taxRate;
 
-    public Phone(Money amount, Duration seconds, double taxRate) {
+    public Phone(Template_VS_Strategy.합성.Money amount, Duration seconds, double taxRate) {
         this.amount = amount;
         this.seconds = seconds;
         this.taxRate = taxRate;
     }
 
     ...
-    public Money calculateFee() {
-        Money result = Money.ZERO;
+    public Template_VS_Strategy.합성.Money calculateFee() {
+        Template_VS_Strategy.합성.Money result = Template_VS_Strategy.합성.Money.ZERO;
 
-        for(Call call : calls) {
+        for(합성.Call call : calls) {
             result = result.plus(amount.times(call.getDuration().getSeconds() / seconds.getSeconds()));
         }
 
@@ -205,24 +205,24 @@ public class Phone {
 
     private PhoneType type;
 
-    private Money amount;
-    private Money regularAmount;
-    private Money nightlyAmount;
+    private Template_VS_Strategy.합성.Money amount;
+    private Template_VS_Strategy.합성.Money regularAmount;
+    private Template_VS_Strategy.합성.Money nightlyAmount;
     private Duration seconds;
-    private List<Call> calls = new ArrayList<>();
+    private List<합성.Call> calls = new ArrayList<>();
 
-    public Phone(Money amount, Duration seconds) {
-        this(PhoneType.REGULAR, amount, Money.ZERO, Money.ZERO, seconds);
+    public Phone(Template_VS_Strategy.합성.Money amount, Duration seconds) {
+        this(PhoneType.REGULAR, amount, Template_VS_Strategy.합성.Money.ZERO, Template_VS_Strategy.합성.Money.ZERO, seconds);
     }
 
-    public Phone(Money nightlyAmount, Money regularAmount,
+    public Phone(Template_VS_Strategy.합성.Money nightlyAmount, Template_VS_Strategy.합성.Money regularAmount,
                  Duration seconds) {
-        this(PhoneType.NIGHTLY, Money.ZERO, nightlyAmount, regularAmount,
+        this(PhoneType.NIGHTLY, Template_VS_Strategy.합성.Money.ZERO, nightlyAmount, regularAmount,
                 seconds);
     }
 
-    public Phone(PhoneType type, Money amount, Money nightlyAmount,
-                 Money regularAmount, Duration seconds) {
+    public Phone(PhoneType type, Template_VS_Strategy.합성.Money amount, Template_VS_Strategy.합성.Money nightlyAmount,
+                 Template_VS_Strategy.합성.Money regularAmount, Duration seconds) {
         this.type = type;
         this.amount = amount;
         this.regularAmount = regularAmount;
@@ -230,10 +230,10 @@ public class Phone {
         this.seconds = seconds;
     }
 
-    public Money calculateFee() {
-        Money result = Money.ZERO;
+    public Template_VS_Strategy.합성.Money calculateFee() {
+        Template_VS_Strategy.합성.Money result = Template_VS_Strategy.합성.Money.ZERO;
 
-        for(Call call : calls) {
+        for(합성.Call call : calls) {
             if (type == PhoneType.REGULAR) {
                 result = result.plus(amount.times(call.getDuration().getSeconds() / seconds.getSeconds()));
             } else {
@@ -260,20 +260,20 @@ public class Phone {
 public class NightlyDiscountPhone extends Phone {
     private static final int LATE_NIGHT_HOUR = 22;
 
-    private Money nightlyAmount;
+    private Template_VS_Strategy.합성.Money nightlyAmount;
 
-    public NightlyDiscountPhone(Money nightlyAmount, Money regularAmount, Duration seconds) {
+    public NightlyDiscountPhone(Template_VS_Strategy.합성.Money nightlyAmount, Template_VS_Strategy.합성.Money regularAmount, Duration seconds) {
         super(regularAmount, seconds);
         this.nightlyAmount = nightlyAmount;
     }
 
     @Override
-    public Money calculateFee() {
+    public Template_VS_Strategy.합성.Money calculateFee() {
         // 부모클래스의 calculateFee 호출
-        Money result = super.calculateFee();
+        Template_VS_Strategy.합성.Money result = super.calculateFee();
 
-        Money nightlyFee = Money.ZERO;
-        for(Call call : getCalls()) {
+        Template_VS_Strategy.합성.Money nightlyFee = Template_VS_Strategy.합성.Money.ZERO;
+        for(합성.Call call : getCalls()) {
             if (call.getFrom().getHour() >= LATE_NIGHT_HOUR) {
                 nightlyFee = nightlyFee.plus(
                         getAmount().minus(nightlyAmount).times(
@@ -309,12 +309,12 @@ public class NightlyDiscountPhone extends Phone {
 
 ```java
 public class Phone {
-    private Money amount;
+    private Template_VS_Strategy.합성.Money amount;
     private Duration seconds;
-    private List<Call> calls = new ArrayList<>();
+    private List<합성.Call> calls = new ArrayList<>();
     private double taxRate;
 
-    public Phone(Money amount, Duration seconds, double taxRate) {
+    public Phone(Template_VS_Strategy.합성.Money amount, Duration seconds, double taxRate) {
         this.amount = amount;
         this.seconds = seconds;
         this.taxRate = taxRate;
@@ -322,10 +322,10 @@ public class Phone {
 
 	  ...
 
-    public Money calculateFee() {
-        Money result = Money.ZERO;
+    public Template_VS_Strategy.합성.Money calculateFee() {
+        Template_VS_Strategy.합성.Money result = Template_VS_Strategy.합성.Money.ZERO;
 
-        for(Call call : calls) {
+        for(합성.Call call : calls) {
             result = result.plus(amount.times(call.getDuration().getSeconds() / seconds.getSeconds()));
         }
 
@@ -344,20 +344,20 @@ Phone의 코드가 변경되면서 NightyDiscountPhone의 코드도 영향을 �
 public class NightlyDiscountPhone extends Phone {
     private static final int LATE_NIGHT_HOUR = 22;
 
-    private Money nightlyAmount;
+    private Template_VS_Strategy.합성.Money nightlyAmount;
 
-    public NightlyDiscountPhone(Money nightlyAmount, Money regularAmount, Duration seconds, double taxRate) {
+    public NightlyDiscountPhone(Template_VS_Strategy.합성.Money nightlyAmount, Template_VS_Strategy.합성.Money regularAmount, Duration seconds, double taxRate) {
         super(regularAmount, seconds, taxRate);
         this.nightlyAmount = nightlyAmount;
     }
 
     @Override
-    public Money calculateFee() {
+    public Template_VS_Strategy.합성.Money calculateFee() {
         // 부모클래스의 calculateFee() 호출
-        Money result = super.calculateFee();
+        Template_VS_Strategy.합성.Money result = super.calculateFee();
 
-        Money nightlyFee = Money.ZERO;
-        for(Call call : getCalls()) {
+        Template_VS_Strategy.합성.Money nightlyFee = Template_VS_Strategy.합성.Money.ZERO;
+        for(합성.Call call : getCalls()) {
             if (call.getFrom().getHour() >= LATE_NIGHT_HOUR) {
                 nightlyFee = nightlyFee.plus(
                         getAmount().minus(nightlyAmount).times(
@@ -513,19 +513,19 @@ public class InstrumentedHashSet<E> extends HashSet<E> {
 
 ```java
 public abstract class AbstractPhone {
-    private List<Call> calls = new ArrayList<>();
+    private List<합성.Call> calls = new ArrayList<>();
 
-    public Money calculateFee() {
-        Money result = Money.ZERO;
+    public Template_VS_Strategy.합성.Money calculateFee() {
+        Template_VS_Strategy.합성.Money result = Template_VS_Strategy.합성.Money.ZERO;
 
-        for(Call call : calls) {
+        for(합성.Call call : calls) {
             result = result.plus(calculateCallFee(call));
         }
 
         return result;
     }
 
-    abstract protected Money calculateCallFee(Call call);
+    abstract protected Template_VS_Strategy.합성.Money calculateCallFee(합성.Call call);
 }
 ```
 
@@ -533,18 +533,18 @@ public abstract class AbstractPhone {
 public class NightlyDiscountPhone extends AbstractPhone {
     private static final int LATE_NIGHT_HOUR = 22;
 
-    private Money nightlyAmount;
-    private Money regularAmount;
+    private Template_VS_Strategy.합성.Money nightlyAmount;
+    private Template_VS_Strategy.합성.Money regularAmount;
     private Duration seconds;
 
-    public NightlyDiscountPhone(Money nightlyAmount, Money regularAmount, Duration seconds) {
+    public NightlyDiscountPhone(Template_VS_Strategy.합성.Money nightlyAmount, Template_VS_Strategy.합성.Money regularAmount, Duration seconds) {
         this.nightlyAmount = nightlyAmount;
         this.regularAmount = regularAmount;
         this.seconds = seconds;
     }
 
     @Override
-    protected Money calculateCallFee(Call call) {
+    protected Template_VS_Strategy.합성.Money calculateCallFee(합성.Call call) {
         if (call.getFrom().getHour() >= LATE_NIGHT_HOUR) {
             return nightlyAmount.times(call.getDuration().getSeconds() / seconds.getSeconds());
         } else {
@@ -556,16 +556,16 @@ public class NightlyDiscountPhone extends AbstractPhone {
 
 ```java
 public class Phone extends AbstractPhone {
-    private Money amount;
+    private Template_VS_Strategy.합성.Money amount;
     private Duration seconds;
 
-    public Phone(Money amount, Duration seconds) {
+    public Phone(Template_VS_Strategy.합성.Money amount, Duration seconds) {
         this.amount = amount;
         this.seconds = seconds;
     }
 
     @Override
-    protected Money calculateCallFee(Call call) {
+    protected Template_VS_Strategy.합성.Money calculateCallFee(합성.Call call) {
         return amount.times(call.getDuration().getSeconds() / seconds.getSeconds());
     }
 }
