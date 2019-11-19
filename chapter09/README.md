@@ -52,21 +52,21 @@
 public class Movie {
     private String title;
     private Duration runningTime;
-    private Money fee;
-    private DiscountPolicy discountPolicy;
+    private Template_VS_Strategy.합성.Money fee;
+    private Template_VS_Strategy.DiscountPolicyTemplate discountPolicy;
 
-    public Movie(String title, Duration runningTime, Money fee) {
+    public Movie(String title, Duration runningTime, Template_VS_Strategy.합성.Money fee) {
         this.title = title;
         this.runningTime = runningTime;
         this.fee = fee;
         this.discountPolicy = new AmountDiscountPolicy(...);
     }
 
-    public Money getFee() {
+    public Template_VS_Strategy.합성.Money getFee() {
         return fee;
     }
 
-    public Money calculateMovieFee(Screening screening) {
+    public Template_VS_Strategy.합성.Money calculateMovieFee(Template_VS_Strategy.Screening screening) {
         return fee.minus(discountPolicy.calculateDiscountAmount(screening));
     }
 }
@@ -102,7 +102,7 @@ public class Client {
         this.factory = factory;
     }
 
-    public Money getAvatarFee() {
+    public Template_VS_Strategy.합성.Money getAvatarFee() {
         Movie avatar = factory.createAvatarMovie();
         return avatar.getFee();
     }
@@ -114,9 +114,9 @@ public class Factory {
     public Movie createAvatarMovie() {
         return new Movie("아바타",
                 Duration.ofMinutes(120),
-                Money.wons(10000),
+                Template_VS_Strategy.합성.Money.wons(10000),
                 new AmountDiscountPolicy(
-                    Money.wons(800),
+                    Template_VS_Strategy.합성.Money.wons(800),
                     new SequenceCondition(1),
                     new SequenceCondition(10)));
     }
@@ -159,13 +159,13 @@ public class Factory {
 ```java
 public class ServiceLocator {
     private static ServiceLocator soleInstance = new ServiceLocator();
-    private DiscountPolicy discountPolicy;
+    private Template_VS_Strategy.DiscountPolicyTemplate discountPolicy;
 
-    public static DiscountPolicy discountPolicy() {
+    public static Template_VS_Strategy.DiscountPolicyTemplate discountPolicy() {
         return soleInstance.discountPolicy;
     }
 
-    public static void provide(DiscountPolicy discountPolicy) {
+    public static void provide(Template_VS_Strategy.DiscountPolicyTemplate discountPolicy) {
         soleInstance.discountPolicy = discountPolicy;
     }
 
@@ -178,21 +178,21 @@ public class ServiceLocator {
 public class Movie {
     private String title;
     private Duration runningTime;
-    private Money fee;
-    private DiscountPolicy discountPolicy;
+    private Template_VS_Strategy.합성.Money fee;
+    private Template_VS_Strategy.DiscountPolicyTemplate discountPolicy;
 
-    public Movie(String title, Duration runningTime, Money fee) {
+    public Movie(String title, Duration runningTime, Template_VS_Strategy.합성.Money fee) {
         this.title = title;
         this.runningTime = runningTime;
         this.fee = fee;
         this.discountPolicy = ServiceLocator.discountPolicy();
     }
 
-    public Money getFee() {
+    public Template_VS_Strategy.합성.Money getFee() {
         return fee;
     }
 
-    public Money calculateMovieFee(Screening screening) {
+    public Template_VS_Strategy.합성.Money calculateMovieFee(Template_VS_Strategy.Screening screening) {
         return fee.minus(discountPolicy.calculateDiscountAmount(screening));
     }
 }
