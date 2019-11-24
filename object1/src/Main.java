@@ -18,7 +18,7 @@ public class Main {
         audience2.buyTicket(seller);
 
         boolean isOk = theater.enter(audience1);
-        boolean isOk2= theater.enter(audience2);
+        boolean isOk2 = theater.enter(audience2);
 
         System.out.println(isOk);
         System.out.println(isOk2);

@@ -1,4 +1,5 @@
 public class Audience {
+
     private Ticket ticket = Ticket.EMTPY;
     private Invitation invitation = Invitation.EMPTY;
     private Long amount;
@@ -7,16 +8,17 @@ public class Audience {
         this.amount = amount;
     }
 
-    public void buyTicket(TickerSeller seller){
+    public void buyTicket(TickerSeller seller) {
         ticket = seller.getTicket(this);
     }
-    public boolean hasAmount(Long amount){
+
+    public boolean hasAmount(Long amount) {
         return this.amount >= amount;
     }
 
-    public boolean minusAmount(Long amount){
-        if(amount > this.amount) return false;
-        this.amount =- amount;
+    public boolean minusAmount(Long amount) {
+        if (amount > this.amount) return false;
+        this.amount = -amount;
         return true;
     }
 
@@ -24,7 +26,7 @@ public class Audience {
         return invitation;
     }
 
-    public void removeInviation(){
+    public void removeInvitation() {
         invitation = Invitation.EMPTY;
     }
 

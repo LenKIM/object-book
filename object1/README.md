@@ -4,7 +4,7 @@
 
 코딩이라는 학문차원에서 왜 그렇게 코딩을 해야되는가?
 
-## 0. 이론
+## 0.이론
 
 ***합리적인 사고를 통해서 합의를 보거나, 상대적인 위치에서 합의를 보려고 한다.***
 
@@ -40,7 +40,7 @@ Flexibility - 유연하게 짜야 한다.
 
 **Convention** - 컨벤션을 지켜라- 
 
-##Xoriented 
+## Xoriented 
 
 OOP : SOLID, DRY.. Reactive / Functional / ..
 
@@ -100,8 +100,6 @@ OOP : SOLID, DRY.. Reactive / Functional / ..
 === 식별자 비교
 
 ![image-20190816211334979](http://ww2.sinaimg.cn/large/006tNc79gy1g61s4wd54sj315c0he0vk.jpg)
-
-​	
 
 ***늘 값과 식별자를 판단하는 자세를 가져야 한다.***
 
