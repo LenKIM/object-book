@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using Monetary;
 using System.Diagnostics.Contracts;
 
