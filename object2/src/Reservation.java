@@ -1,4 +1,5 @@
 public class Reservation {
+
     static final Reservation NONE = new Reservation(null, null, null, 0);
 
     final Theater theater;

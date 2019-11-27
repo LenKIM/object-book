@@ -4,6 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class Movie<T extends DiscountPolicy & DiscountCondition> {
+
     private final String title;
     private final Duration runningTime;
     private final Money fee;

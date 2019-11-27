@@ -1,7 +1,7 @@
 import java.time.Duration;
 import java.time.LocalDateTime;
 
-public class main {
+public class Main {
 
     public static void main(String[] args) {
 

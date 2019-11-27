@@ -1,6 +1,7 @@
 import java.time.LocalDateTime;
 
 public class Screening {
+
     private int seat;
     final int sequence;
     final LocalDateTime whenScreened;
