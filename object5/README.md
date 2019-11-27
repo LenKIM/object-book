@@ -1,14 +1,12 @@
-### 7~8장
+### 책에서 7~8장해당 되는 내용
 
 모으는거, 합치는 거
 
-# Composition VS Assamble
+# Composition VS Assemble
 
 ![image-20190925000605736](https://tva1.sinaimg.cn/large/006y8mN6gy1g7b0agpxbrj31gm0u0ab7.jpg)
 
-
-
-`Assamble`은 레고 같은거라면,
+`Assemble`은 레고 같은거라면,
 
 `Composition`은 자동차의 트랜스미션와 같다.
 
@@ -29,7 +27,6 @@
 `if`가 2단계 넘어가면 복잡성 폭발이라고 생각할 수있다.
 
 ***3단이 넘어가는 건 안된다. 기계가 되어야 한다.***
-
 
 
 *책에서는 총 3가지의 복잡한 내용을 분해하는 방법에 대해서 소개합니다.*
