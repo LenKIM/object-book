@@ -60,7 +60,9 @@ public class CompositeTask {
             report.add(t.getReport(type));
         }
         return report;
+    }
 
-
+    public boolean getIsComplete(){
+        return isComplete;
     }
 }

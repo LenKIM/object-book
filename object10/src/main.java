@@ -21,8 +21,7 @@ public class main {
         sub2.addTask("sub2_1", LocalDateTime.now());
         sub2.addTask("sub2_2", LocalDateTime.now());
 
-
-
-
+        Renderer renderer1 = new Renderer(() -> new ConsoleVisitor());
+        renderer1.render(root.getReport(CompositeSortType.TITLE_ASC));
     }
 }
