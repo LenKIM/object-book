@@ -38,11 +38,13 @@ public class CompositeTask {
         return isComplete;
     }
 
-    public void addTask(String title, LocalDateTime date) {
-        list.add(new CompositeTask(title, date));
+    public CompositeTask addTask(String title, LocalDateTime date) {
+        CompositeTask task = new CompositeTask(title, date);
+        list.add(task);
+        return task;
     }
 
-    public void addRemove(CompositeTask task) {
+    public void removeTask(CompositeTask task) {
         //메모리 주소로 식별된당.
         list.remove(task);
     }
@@ -60,7 +62,7 @@ public class CompositeTask {
         return report;
     }
 
-    public boolean getIsComplete(){
+    public boolean getIsComplete() {
         return isComplete;
     }
 }
