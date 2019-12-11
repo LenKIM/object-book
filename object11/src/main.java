@@ -9,13 +9,13 @@ public class main {
         root.addTask("sub1", LocalDateTime.now());
         root.addTask("sub2", LocalDateTime.now());
 
-        Renderer renderer1 = new Renderer(() -> new ConsoleVisitor());
+        Renderer renderer1 = new Renderer(() -> new JsonVisitor());
         renderer1.render(root.getReport(CompositeSortType.TITLE_ASC));
 
-        root.undo();
+        root.save("key01");
         renderer1.render(root.getReport(CompositeSortType.TITLE_ASC));
 
-        root.undo();
+        root.load("key01");
         renderer1.render(root.getReport(CompositeSortType.TITLE_ASC));
 
         root.redo();

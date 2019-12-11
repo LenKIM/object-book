@@ -1,11 +1,27 @@
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class CommandTask {
 
     private final CompositeTask task;
     private List<Command> commands = new ArrayList<>();
+    private final Map<String, String> saved = new HashMap<>();
+
+    public void save(String key) {
+        JsonVisitor visitor = new JsonVisitor();
+        Renderer renderer1 = new Renderer(() -> visitor);
+        renderer1.render(task.getReport(CompositeSortType.TITLE_ASC));
+        saved.put(key, visitor.getJson());
+    }
+
+    public void load(String key) {
+        String json = saved.get(key);
+        // subtask 삭제
+        // json 순회하면서 복원.
+    }
 
     private int cursor = 0;
 

@@ -10,7 +10,7 @@ public class ConsoleVisitor implements Visitor {
     }
 
     @Override
-    public void end(int depth) {
+    public void end(int depth, boolean isEnd) {
         System.out.println("End");
     }
 }
