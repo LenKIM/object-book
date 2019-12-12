@@ -9,47 +9,47 @@ s84 동영상 리스트 -> https://www.youtube.com/watch?v=vSnFC2x-RYE&list=PLBN
 
 ## s83&84 동영상 내용 요약 
 
-[ 코드 스피치 오브젝트 83 1주차 ](https://github.com/LenKIM/object-book/tree/master/object1)
+[ 코드 스피츠 오브젝트 83 1주차 ](https://github.com/LenKIM/object-book/tree/master/object1)
 
 : 왜 코딩을 하는가?  코딩이라는 학문차원에서 왜 그렇게 코딩을 해야되는가?
 
-[ 코드 스피치 오브젝트 83 2주차 ](https://github.com/LenKIM/object-book/tree/master/object2)
+[ 코드 스피츠 오브젝트 83 2주차 ](https://github.com/LenKIM/object-book/tree/master/object2)
 
 : Type
 
-[ 코드 스피치 오브젝트 83 3주차 ](https://github.com/LenKIM/object-book/tree/master/object3)
+[ 코드 스피츠 오브젝트 83 3주차 ](https://github.com/LenKIM/object-book/tree/master/object3)
 
 : 객체망과 객체간 통신
 
-[ 코드 스피치 오브젝트 83 4주차 ](https://github.com/LenKIM/object-book/tree/master/object4)
+[ 코드 스피츠 오브젝트 83 4주차 ](https://github.com/LenKIM/object-book/tree/master/object4)
 
 : 리스코프 치환원칙
 
-[ 코드 스피치 오브젝트 83 5주차 ](https://github.com/LenKIM/object-book/tree/master/object5)
+[ 코드 스피츠 오브젝트 83 5주차 ](https://github.com/LenKIM/object-book/tree/master/object5)
 
 : Composition VS Assemble
 
-[ 코드 스피치 오브젝트 83 6주차 ](https://github.com/LenKIM/object-book/tree/master/object6)
+[ 코드 스피츠 오브젝트 83 6주차 ](https://github.com/LenKIM/object-book/tree/master/object6)
 
 : 합성과 의존성
 
-[ 코드 스피치 오브젝트 84 1주차 ](https://github.com/LenKIM/object-book/tree/master/object7)
+[ 코드 스피츠 오브젝트 84 1주차 ](https://github.com/LenKIM/object-book/tree/master/object7)
 
 : 상속과 확장
 
-[ 코드 스피치 오브젝트 84 2주차 ](https://github.com/LenKIM/object-book/tree/master/object8)
+[ 코드 스피츠 오브젝트 84 2주차 ](https://github.com/LenKIM/object-book/tree/master/object8)
 
 : Contract 
 
-[ 코드 스피치 오브젝트 84 4주차 ](https://github.com/LenKIM/object-book/tree/master/object10)
+[ 코드 스피츠 오브젝트 84 4주차 ](https://github.com/LenKIM/object-book/tree/master/object10)
 
 : Visitor, Composite 패턴
 
-[ 코드 스피치 오브젝트 84 5주차 ](https://github.com/LenKIM/object-book/tree/master/object11)
+[ 코드 스피츠 오브젝트 84 5주차 ](https://github.com/LenKIM/object-book/tree/master/object11)
 
 : Command 패턴
 
-[ 코드 스피치 오브젝트 84 6주차 ](https://github.com/LenKIM/object-book/tree/master/object12)
+[ 코드 스피츠 오브젝트 84 6주차 ](https://github.com/LenKIM/object-book/tree/master/object12)
 
 : 테스트 주도 개발
  
