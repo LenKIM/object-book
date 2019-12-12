@@ -182,7 +182,7 @@ SafetyInteger 라고 불린다.
 
 위 코드에서 	`isEmpty()` 는 잘못된 함수.
 
-묻지말고 시켜라 에 맞쳐서 
+`묻지말고 시켜라` 에 맞쳐서 
 
 
 
@@ -403,3 +403,4 @@ Pre / Post condition은 코드 뿐만 아니라, 가시성으로도 보장할 �
 
 
 ![image-20191117224522021](https://tva1.sinaimg.cn/large/006y8mN6gy1g91df1k5vqj314s0kq78u.jpg)
+
