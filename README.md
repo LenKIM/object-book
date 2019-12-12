@@ -3,9 +3,9 @@ Study Object book Content Repository
 
 # 오브젝트 동영상 강의 내용
 
-https://www.youtube.com/watch?v=sWyZUzQW3IM&list=PLBNdLLaRx_rI-UsVIGeWX_iv-e8cxpLxS
+s83 동영상 리스트 -> https://www.youtube.com/watch?v=sWyZUzQW3IM&list=PLBNdLLaRx_rI-UsVIGeWX_iv-e8cxpLxS
 
-https://www.youtube.com/watch?v=vSnFC2x-RYE&list=PLBNdLLaRx_rLOQsMCWxvawSUVI6cXoMsk
+s84 동영상 리스트 -> https://www.youtube.com/watch?v=vSnFC2x-RYE&list=PLBNdLLaRx_rLOQsMCWxvawSUVI6cXoMsk
 
 ## s83&84 동영상 내용 요약 
 
