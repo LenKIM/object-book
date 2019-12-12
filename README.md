@@ -55,6 +55,8 @@ https://www.youtube.com/watch?v=vSnFC2x-RYE&list=PLBNdLLaRx_rLOQsMCWxvawSUVI6cXo
  
 ## 오브젝트 책 내용
 
+https://wikibook.co.kr/object/
+
 [ 6장 내용 정리 ](https://github.com/LenKIM/object-book/tree/master/object-origin-book/chapter06)
 
 : 메시지와 인터페이스
