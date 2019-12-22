@@ -25,12 +25,10 @@ public class Tasks {
         //메모리 주소로 식별된당.
         list.remove(task);
     }
-
     public List<Task> getList(SortType type) {
         List<Task> tasks = new ArrayList<>(list);
         //얖은 복사를 수행하게 됨.
         tasks.sort((a, b) -> type.compare(a, b));
         return tasks;
-
     }
 }

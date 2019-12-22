@@ -36,10 +36,6 @@ public class CompositeTask {
         return date;
     }
 
-    public Boolean getComplete() {
-        return isComplete;
-    }
-
     public void addTask(String title, LocalDateTime date) {
         list.add(new CompositeTask(title, date));
     }
@@ -62,7 +58,7 @@ public class CompositeTask {
         return report;
     }
 
-    public boolean getIsComplete(){
+    public boolean isComplete(){
         return isComplete;
     }
 }

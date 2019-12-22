@@ -5,12 +5,12 @@ public class ConsoleVisitor implements Visitor {
         for (int i = 0; i < depth; i++) {
             padding += "-";
         }
-        System.out.println(padding + (task.getIsComplete() ? "[v] " : "[ ] "
+        System.out.println(padding + (task.isComplete() ? "[v] " : "[ ] "
                 + task.getTitle() + "(" + task.getDate() + ")"));
     }
 
     @Override
     public void end(int depth) {
-        System.out.println("End");
+
     }
 }
