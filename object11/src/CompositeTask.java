@@ -62,6 +62,16 @@ public class CompositeTask {
         return report;
     }
 
+    public void removeAll () {
+        if (this.list.size() == 0) {
+            return;
+        }
+        for (CompositeTask task : this.list) {
+            task.removeAll();
+        }
+        this.list.clear();
+    }
+
     public boolean getIsComplete() {
         return isComplete;
     }

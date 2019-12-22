@@ -1,7 +1,7 @@
 import java.time.LocalDateTime;
 import java.util.List;
 
-public class main {
+public class Main {
 
     public static void main(String[] args) {
 
@@ -12,14 +12,17 @@ public class main {
         Renderer renderer1 = new Renderer(() -> new JsonVisitor());
         renderer1.render(root.getReport(CompositeSortType.TITLE_ASC));
 
-        root.save("key01");
+        root.undo();
         renderer1.render(root.getReport(CompositeSortType.TITLE_ASC));
 
-        root.load("key01");
+        root.undo();
         renderer1.render(root.getReport(CompositeSortType.TITLE_ASC));
 
-        root.redo();
-        renderer1.render(root.getReport(CompositeSortType.TITLE_ASC));
+//        root.load("key01");
+//        renderer1.render(root.getReport(CompositeSortType.TITLE_ASC));
+
+//        root.redo();
+//        renderer1.render(root.getReport(CompositeSortType.TITLE_ASC));
 
 //        TaskReport report = root.getReport(CompositeSortType.TITLE_ASC);
 //        List<TaskReport> list = report.getList();
