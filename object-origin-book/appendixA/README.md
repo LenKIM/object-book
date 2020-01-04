@@ -183,7 +183,7 @@ public Reservation reserve(Customer customer, int audienceCount){
 
 **가변성 규칙(variance rules)**
 
-- 서브타입의 메서드 파라미터는 반공변성을 가져야 하낟.
+- 서브타입의 메서드 파라미터는 반공변성을 가져야 한다.
 - 서브타입의 리턴 타입은 공변성을 가져야 한다.
 - 서브타입은 슈퍼타입이 발생시키는 예외와 다른 타입의 예외를 발생시켜서는 안 된다.
 
