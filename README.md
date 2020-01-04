@@ -80,3 +80,7 @@ https://wikibook.co.kr/object/
 [ 13장 내용 정리 ](https://github.com/LenKIM/object-book/tree/master/object-origin-book/chapter13) 
 
 : 서브클래싱과 서브타이핑
+
+[ 부록 A - 계약에 의한 설계 ](https://github.com/LenKIM/object-book/tree/master/object-origin-book/appendixA)
+
+[ 세미나 자료 ](https://github.com/LenKIM/object-book/blob/master/object-origin-book/appendixA/%EA%B3%84%EC%95%BD%EC%97%90%EC%9D%98%ED%95%9C%EC%84%A4%EA%B3%84.pdf)
